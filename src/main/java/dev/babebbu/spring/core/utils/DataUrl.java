@@ -19,7 +19,7 @@ public class DataUrl {
     private DataUrl() {}
 
     public static DataUrl fromUrl(String s) {
-        String[] data = s.split("([[:alnum:]]+):([[:alnum:]]+)\\/([[:alnum:]]+);(base64),(.+)");
+        String[] data = s.split("([[:alnum:]]+):([[:alnum:]]+)\\/([[:alnum:]]+);([[:alnum:]]+),(.+)");
         DataUrl dataUrl = new DataUrl();
         // Ignore data[0]
         dataUrl.group = data[1];
