@@ -21,6 +21,7 @@ public class DataUrl {
     public static DataUrl fromUrl(String s) {
         String[] data = s.split("([[:alnum:]]+):([[:alnum:]]+)\\/([[:alnum:]]+);(base64),(.+)");
         DataUrl dataUrl = new DataUrl();
+        // Ignore data[0]
         dataUrl.group = data[1];
         dataUrl.extension = data[2];
         dataUrl.encoding = data[3];
