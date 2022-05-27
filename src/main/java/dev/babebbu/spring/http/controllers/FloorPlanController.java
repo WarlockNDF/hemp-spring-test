@@ -8,10 +8,12 @@ import dev.babebbu.spring.http.providers.RequestEntitiesProvider;
 import dev.babebbu.spring.http.providers.ResponseEntitiesProvider;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 @RestController
@@ -30,6 +32,7 @@ public class FloorPlanController {
      * @param request FloorPlanRequest
      * @return Object
      */
+    @SneakyThrows
     @PostMapping("floor-plans")
     public Object create(@RequestBody FloorPlanRequest request) {
         String filename = storageService.local().save(request.getImage().getBytes(StandardCharsets.UTF_8));
