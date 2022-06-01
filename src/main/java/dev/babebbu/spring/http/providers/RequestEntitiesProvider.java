@@ -1,6 +1,5 @@
 package dev.babebbu.spring.http.providers;
 
-import dev.babebbu.spring.core.models.entities.requests.FloorPlanRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
